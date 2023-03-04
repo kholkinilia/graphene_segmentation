@@ -1,6 +1,6 @@
 # Thin Graphene layers detection.
 
-This is the code of a reproduction of the approach using UNET. The orignal code can be found [here](https://github.com/Hui-Ying/Graphene-automatic-detection).
+This is the code of a reproduction of the approach using UNET. The orignal code and article can be found [here](https://github.com/Hui-Ying/Graphene-automatic-detection).
 
 Changes to the original code:
 * Changed color model from SVM (which didn't use GPU) to two-layer FCNN achieving significant performance increase without loss of quality.
