@@ -3,5 +3,6 @@
 /.rolos_storages
 
 # dataset related directories
+/resources
 /dataset
 *.zip
