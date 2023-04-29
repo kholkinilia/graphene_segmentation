@@ -6,3 +6,4 @@
 /resources
 /dataset
 *.zip
+*.ckpt
