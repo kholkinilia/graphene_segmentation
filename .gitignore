@@ -1,0 +1,7 @@
+
+/rolos_workflow_data
+/.rolos_storages
+
+# dataset related directories
+/dataset
+*.zip
