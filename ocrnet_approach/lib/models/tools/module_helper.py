@@ -113,9 +113,11 @@ class ModuleHelper(object):
         if pretrained is None:
             return model
 
+        device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
+
         if all_match:
             Log.info('Loading pretrained model:{}'.format(pretrained))
-            pretrained_dict = torch.load(pretrained)
+            pretrained_dict = torch.load(pretrained, map_location=device)
             model_dict = model.state_dict()
             load_dict = dict()
             for k, v in pretrained_dict.items():
@@ -127,7 +129,7 @@ class ModuleHelper(object):
 
         else:
             Log.info('Loading pretrained model:{}'.format(pretrained))
-            pretrained_dict = torch.load(pretrained)
+            pretrained_dict = torch.load(pretrained, map_location=device)
 
             # settings for "wide_resnet38"  or network == "resnet152"
             if network == "wide_resnet":
