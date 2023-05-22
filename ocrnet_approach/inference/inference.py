@@ -110,7 +110,8 @@ def load_model(model_filename: str) -> ort.InferenceSession:
 
     Create an onnx inference session from the filename
     """
-    return ort.InferenceSession(model_filename)
+    execution_provider_priority_list = ['CUDAExecutionProvider', 'CPUExecutionProvider']
+    return ort.InferenceSession(model_filename, providers=execution_provider_priority_list)
 
 
 def get_segmentation(model: ort.InferenceSession, image_filename: str, size: tuple = (256, 256),
