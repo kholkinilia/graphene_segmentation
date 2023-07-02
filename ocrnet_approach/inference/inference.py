@@ -10,7 +10,7 @@ def _load_image(image_filename: str) -> Image.Image:
 
     Load an image as a numpy array from the filename
     """
-    return Image.open(image_filename)
+    return Image.open(image_filename).convert('RGB')
 
 
 def _resize(image: np.ndarray, size: tuple) -> np.ndarray:
